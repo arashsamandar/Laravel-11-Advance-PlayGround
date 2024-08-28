@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('author');
-            $table->date('publish_date');
+            $table->date('publish_date')->default(Carbon\Carbon::now());
             $table->string('serialNumber')->unique();
             $table->timestamps();
         });

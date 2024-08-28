@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
-    private mixed $serialNumber;
 
     protected $fillable = [
         'name',
@@ -21,7 +20,11 @@ class Book extends Model
     {
         parent::boot();
         static::creating(function (self $model) {
-            $model->serialNumber = strtoupper(sha1(time().rand()),0,8);
+            $model->serialNumber = strtoupper(sha1(time().rand()));
         });
+    }
+
+    public function returnSomething(): string {
+        return "hello arash from Book modle";
     }
 }

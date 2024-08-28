@@ -6,4 +6,4 @@ Route::controller(\App\Http\Controllers\TestController::class)->group(function (
     Route::get('/', 'returnSomeString');
 });
 
-//Route::apiResource()
+Route::apiResource('books', \App\Http\Controllers\API\BookController::class);
