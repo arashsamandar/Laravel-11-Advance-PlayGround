@@ -16,4 +16,5 @@ class Mock extends Model
     protected $fillable = [
         'name',
     ];
+
 }

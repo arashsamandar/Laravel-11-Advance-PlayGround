@@ -27,4 +27,5 @@ class Book extends Model
     public function returnSomething(): string {
         return "hello arash from Book modle";
     }
+    
 }
