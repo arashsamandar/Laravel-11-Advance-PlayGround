@@ -15,7 +15,7 @@ class BookController extends Controller
     {
         $books = Book::all();
         event(new ArashEventTwo('Event Two Was Triggered In BookController.php Controller File'));
-
+        
         return response()->json(compact('books'));
     }
 
