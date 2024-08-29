@@ -10,21 +10,11 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ArashEvent
+class ArashEventTwo
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
-    public string $message;
-
-    public function __construct(string $message)
+    public function __construct()
     {
-        $this->message = $message;
-    }
-
-    public function broadcastOn(): array
-    {
-        return [
-            new PrivateChannel('channel-name'),
-        ];
+        //
     }
 }
