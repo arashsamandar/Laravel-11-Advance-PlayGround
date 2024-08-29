@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Events\ArashEvent;
+use App\Events\ArashEventTwo;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
 use Illuminate\Http\JsonResponse;
@@ -13,7 +14,8 @@ class BookController extends Controller
     public function index(): JsonResponse
     {
         $books = Book::all();
-        event(new ArashEvent('line 16 of BookController.php'));
+        event(new ArashEventTwo('Event Two Was Triggered In BookController.php Controller File'));
+
         return response()->json(compact('books'));
     }
 

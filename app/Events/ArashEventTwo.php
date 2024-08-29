@@ -13,8 +13,9 @@ use Illuminate\Queue\SerializesModels;
 class ArashEventTwo
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public function __construct()
+    public string $message;
+    public function __construct(string $message)
     {
-        //
+        $this->message = $message;
     }
 }
