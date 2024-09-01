@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-      "./resources/views/**/*.blade.php",
-      "./resources/js/**/*.js",
-      "./resources/css/**/*.css",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+module.exports = {
+    purge: ['./resources/**/*.blade.php', './resources/**/*.js' , './storage/framework/views/*.php'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+        extend: {},
+    },
+    variants: {
+        extend: {},
+    },
+    plugins: [],
 }
-
