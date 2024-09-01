@@ -39,8 +39,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("header", {
-    className: "border-gray-400 full-width text-center",
-    children: "Welcome Message Fron ReactJs"
+    className: "bg-blue-500 with-3d-shadow full-width text-center",
+    children: "Welcome Message Fron ReactJs Arash"
   });
 }
 
@@ -34975,7 +34975,7 @@ if (false) {} else {
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunklaravel_vercel"] = self["webpackChunklaravel_vercel"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
