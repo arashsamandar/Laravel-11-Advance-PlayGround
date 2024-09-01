@@ -39,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function App() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("header", {
-    className: "bg-blue-500 with-3d-shadow full-width text-center",
+    className: "bg-blue-600 with-3d-shadow full-width text-center",
     children: "Welcome Message Fron ReactJs Arash"
   });
 }
