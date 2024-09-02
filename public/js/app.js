@@ -38,9 +38,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("header", {
-    className: "bg-blue-500 text-center",
-    children: "Welcome Message Fron ReactJs"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "text-lg text-blue-500 bg-yellow-200 p-4",
+    children: "Hello, Tailwind CSS!"
   });
 }
 
