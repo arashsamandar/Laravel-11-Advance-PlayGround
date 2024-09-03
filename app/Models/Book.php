@@ -5,6 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static create(array $all)
+ * @method static find($id)
+ */
+
 class Book extends Model
 {
     use HasFactory;
@@ -23,9 +28,4 @@ class Book extends Model
             $model->serialNumber = strtoupper(sha1(time().rand()));
         });
     }
-
-    public function returnSomething(): string {
-        return "hello arash from Book modle";
-    }
-
 }

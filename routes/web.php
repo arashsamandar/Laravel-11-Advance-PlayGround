@@ -2,11 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource('books', \App\Http\Controllers\API\BookController::class);
-Route::get('/homeArash', function () {
-    return view('home');
+// ----------------------------------- Routes -----------------------------------------
+
+Route::controller(\App\Http\Controllers\PagesController::class)->group(function () {
+    Route::get('/getbooks', 'getBookPage');
+    Route::get('/', 'getHomePage');
 });
 
-Route::get('/getbooks', function () {
-    return view('books.book');
-});
+Route::any('/checkRoute/{id}', [\App\Http\Controllers\TestController::class, 'index']);
+
+Route::apiResource('books', \App\Http\Controllers\API\BookController::class);

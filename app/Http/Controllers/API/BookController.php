@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Events\ArashEvent;
 use App\Events\ArashEventTwo;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
@@ -18,14 +17,19 @@ class BookController extends Controller
         return response()->json(compact('books'));
     }
 
-    public function store(Request $request): array
+    public function store(Request $request): JsonResponse
     {
-        return $request->all();
+        $book = Book::create($request->all());
+        return \response()->json(compact('book'));
     }
 
-    public function show($id)
+    public function show(int $id): JsonResponse
     {
-        return $id;
+        if($book = Book::find($id)){
+            return response()->json(compact('book'));
+        }else{
+            return response()->json(['message'=>'book id not found']);
+        }
     }
 
     public function update(Request $request, $id): void
@@ -38,5 +42,9 @@ class BookController extends Controller
         return $id;
     }
 
-    
+    public function storeTinker(array $data): void
+    {
+        dd($data);
+    }
+
 }
