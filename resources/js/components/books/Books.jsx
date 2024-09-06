@@ -6,9 +6,11 @@ import Footer from "../layouts/Footer";
 export default function () {
     return (
         <React.Fragment>
-            <Header/>
-            <Main />
-            <Footer />
+            <div className="flex flex-col min-h-screen">
+                <Header/>
+                <Main className="flex-grow" />
+                <Footer />
+            </div>
         </React.Fragment>
     )
 }

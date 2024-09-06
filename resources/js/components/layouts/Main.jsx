@@ -1,10 +1,12 @@
 import React from "react";
-import FirstForm from "../books/FirstForm";
+import TailWindExample from "../books/TailWindExample";
 
 export default function Main(){
     return(
-        <div className="bg-gray-500 text-center h-[90vh] justify-center items-center">
-            <FirstForm />
+        <div className="flex bg-gradient-to-bl from-sky-500 to-indigo-500 text-center min-h-[90vh] justify-center items-center">
+
+            <TailWindExample />
+
         </div>
     )
 }
