@@ -19,5 +19,6 @@ return Application::configure(basePath: dirname(__DIR__))
             if($e instanceof TypeError){
                 return response()->json(['error' => 'invalid type error '],400);
             }
+            return null;
         });
     })->create();

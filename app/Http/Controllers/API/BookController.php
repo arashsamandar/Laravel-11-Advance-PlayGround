@@ -12,8 +12,8 @@ class BookController extends Controller
 {
     public function index(): JsonResponse
     {
+//        event(new ArashEventTwo('Event Two Was Triggered In BookController.php Controller File'));
         $books = Book::all();
-        event(new ArashEventTwo('Event Two Was Triggered In BookController.php Controller File'));
         return response()->json(compact('books'));
     }
 
@@ -25,7 +25,7 @@ class BookController extends Controller
 
     public function show(int $id): JsonResponse
     {
-        if($book = Book::find($id)){
+        if($book = Book::find($id) != null){
             return response()->json(compact('book'));
         }else{
             return response()->json(['message'=>'book id not found']);
@@ -40,11 +40,6 @@ class BookController extends Controller
     public function destroy($id): int
     {
         return $id;
-    }
-
-    public function storeTinker(array $data): void
-    {
-        dd($data);
     }
 
 }
