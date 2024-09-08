@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Get Your Book</title>
 </head>
-<body class="dark">
+<body>
 <div id="books"></div>
 </body>
 <script src="{{asset('js/books.js')}}"></script>
