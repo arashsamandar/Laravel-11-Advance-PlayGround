@@ -51,11 +51,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-function InputTexts() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-    type: "email",
-    placeholder: "enter your email",
-    className: "peer text-sm md:text-base rounded-lg border border-gray-400 focus:ring-2 focus:ring-blue-800 focus:border-blue-500 p-2 w-full"
+function InputTexts(_ref) {
+  var setFocus = _ref.setFocus;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "flex flex-col items-start w-full",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      type: "email",
+      placeholder: "enter your email",
+      className: "outline-none text-sm rounded-lg p-2 w-full md:text-base focus:drop-shadow-[0_4px_6px_rgba(255,255,255,0.5)] transition duration-500",
+      onFocus: function onFocus() {
+        return setFocus(true);
+      },
+      onBlur: function onBlur() {
+        return setFocus(false);
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "mt-4 flex w-full gap-4",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        className: "flex-1 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700",
+        children: "Save Book"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        className: "flex-1 py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700",
+        children: "Cancel"
+      })]
+    })]
   });
 }
 
@@ -92,23 +113,15 @@ function TailWindExample() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
     className: "w-full max-w-sm border border-gray-700 bg-gray-800 rounded-lg shadow",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "p-4 text-black ".concat(focus ? 'bg-gray-700 text-white' : 'bg-white'),
+      className: "p-4 rounded-t-lg text-black ".concat(focus ? 'bg-gray-700 text-white transition duration-500' : 'bg-gradient-to-b from-gray-800 to-black text-white border-gray-400'),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "font-bold text-center peer-focus:bg-blue-500",
+        className: "font-bold text-center",
         children: "Arash Salamander"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "text-center p-10",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        type: "email",
-        placeholder: "enter your email",
-        className: "outline-none text-sm md:text-base rounded-lg border border-gray-400 focus:ring-2 focus:ring-blue-800 focus:border-blue-500 p-2 w-full",
-        onFocus: function onFocus() {
-          return setFocus(true);
-        },
-        onBlur: function onBlur() {
-          return setFocus(false);
-        }
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_InputTexts__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        setFocus: setFocus
       })
     })]
   });
