@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InputTexts({setFocus}) {
+export default function InputFields({setFocus}) {
     return (
         <div className="flex flex-col items-start w-full">
             <input

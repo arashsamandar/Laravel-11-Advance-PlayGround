@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Route;
 Route::controller(\App\Http\Controllers\PagesController::class)->group(function () {
     Route::get('/getbooks', 'getBookPage');
     Route::get('/', 'getHomePage');
+
+//    Route::get('/{path?}', function () {
+//        return view('books');
+//    })->where('path', '.*');
 });
 
 Route::any('/checkRoute/{id}', [\App\Http\Controllers\TestController::class, 'index']);
