@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,4 +29,10 @@ class Book extends Model
             $model->serialNumber = strtoupper(sha1(time().rand()));
         });
     }
+
+    public function scopePublishDate($query,Carbon $date)
+    {
+        return $query->where('publish_date', '<', $date);
+    }
+
 }
