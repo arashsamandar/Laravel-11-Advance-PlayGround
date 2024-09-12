@@ -23,6 +23,8 @@ class UserFactory extends Factory
 
     public function unverified(): static
     {
+        $objName = 'something';
+        $getObjName = $myname ?? 'nothing';
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);

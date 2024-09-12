@@ -16,6 +16,7 @@ Route::controller(\App\Http\Controllers\PagesController::class)->group(function 
 Route::any('/checkRoute/{id}', [\App\Http\Controllers\TestController::class, 'index']);
 
 Route::apiResource('books', \App\Http\Controllers\API\BookController::class);
+Route::get('/somsom', [\App\Http\Controllers\API\BookController::class, 'exampleOfUsingFacades']);
 
 
 

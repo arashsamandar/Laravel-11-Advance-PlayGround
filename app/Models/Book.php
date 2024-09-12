@@ -6,14 +6,13 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @method static create(array $all)
- * @method static find($id)
- */
-
 class Book extends Model
 {
     use HasFactory;
+
+    /**
+     * @var mixed|string[]
+     */
 
     protected $fillable = [
         'name',
@@ -22,7 +21,7 @@ class Book extends Model
         'serialNumber'
     ];
 
-    protected static function boot(): void
+    protected static function boot()
     {
         parent::boot();
         static::creating(function (self $model) {
