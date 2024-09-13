@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Facades\ArashExampleFacade;
 use App\Http\Controllers\Controller;
 use App\Models\Book;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Facade;
 
 class BookController extends Controller
 {
@@ -17,6 +15,7 @@ class BookController extends Controller
         $books = Book::all();
         return response()->json(compact('books'));
     }
+
 
     public function store(Request $request): JsonResponse
     {
@@ -42,11 +41,4 @@ class BookController extends Controller
     {
         return $id;
     }
-
-    public function exampleOfUsingFacades(): JsonResponse
-    {
-        $response = ArashExampleFacade::returnSomeString();
-        return response()->json(compact('response'));
-    }
-
 }
