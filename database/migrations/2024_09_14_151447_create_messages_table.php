@@ -13,8 +13,8 @@ return new class extends Migration
             $table->string('message');
             $table->unsignedBigInteger('sender_id');
             $table->unsignedBigInteger('receiver_id');
-            $table->string('sender');
-            $table->string('receiver');
+            $table->string('sender_type');
+            $table->string('receiver_type');
             $table->boolean('is_read')->default(false);
             $table->timestamps();
         });

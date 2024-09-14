@@ -13,7 +13,6 @@ class Book extends Model
     /**
      * @var mixed|string[]
      */
-
     protected $fillable = [
         'name',
         'author',
@@ -24,9 +23,7 @@ class Book extends Model
     protected static function boot()
     {
         parent::boot();
-        static::creating(function (self $model) {
-            $model->serialNumber = strtoupper(sha1(time().rand()));
-        });
+        static::creating(fn(self $model) => $model->serialNumber = strtoupper(sha1(time().rand())));
     }
 
     public function scopePublishDate($query,Carbon $date)
