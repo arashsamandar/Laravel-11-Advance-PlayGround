@@ -4,16 +4,24 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use PharIo\Version\Exception;
 
 class Arash extends Command
 {
 
-    protected $signature = 'samandar';
+    protected $signature = 'sendMail';
 
-    protected $description = 'Command description';
+    protected $description = 'Send a test email';
 
     public function handle(): void
     {
-        Log::info('hello arash Command Arash Is Working Properly...');
+        try {
+            Mail::raw('Hello world', function ($message) {
+                $message->to('arash.internet@gmail.com')->subject('From LaravelEleven');
+            });
+        }catch (\Exception $exception){
+            Log::error($exception->getMessage());
+        }
     }
 }
