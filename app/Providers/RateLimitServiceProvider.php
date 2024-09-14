@@ -34,6 +34,6 @@ class RateLimitServiceProvider extends ServiceProvider
 
     protected function methodBootstrapedAndLogFacadeLaunched(): void
     {
-        Log::info('Arashh Config Launched');
+//        Log::info('Arashh Config Launched');
     }
 }
