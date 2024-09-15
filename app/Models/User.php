@@ -22,6 +22,12 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected static function boot(): void
+    {
+        parent::boot();
+        // do your stuff here
+    }
+
     public function sentMessages(): MorphMany
     {
         return $this->morphMany(Message::class, 'sender');
