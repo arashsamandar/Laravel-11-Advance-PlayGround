@@ -12,11 +12,11 @@ class Message extends Model
 
     public function sender(): MorphTo
     {
-        return $this->morphTo();
+        return $this->morphTo('sender');
     }
 
     public function receiver(): MorphTo
     {
-        return $this->morphTo();
+        return $this->morphTo('receiver');
     }
 }
