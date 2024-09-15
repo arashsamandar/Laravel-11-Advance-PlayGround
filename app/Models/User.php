@@ -26,7 +26,10 @@ class User extends Authenticatable
     protected static function boot(): void
     {
         parent::boot();
-        static::creating(fn(self $model) => event(new UserCreatedEvent('User was Created Event')));
+        static::creating(function (self $user) {
+            $user->password = bcrypt($user->password);
+            event(new UserCreatedEvent('User was Created Event'));
+        });
     }
 
     public function sentMessages(): MorphMany

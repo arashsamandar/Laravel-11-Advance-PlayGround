@@ -28,4 +28,5 @@ class Admin extends Model
     {
         return $this->morphMany(Message::class, 'receiver');
     }
+
 }

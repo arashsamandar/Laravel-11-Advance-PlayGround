@@ -33,4 +33,11 @@ class SampleTestsController extends Controller
     {
         return csrf_token();
     }
+
+    public function testingFunction(): string {
+        $arashName = "Arash Salamander";
+        return (function () use ($arashName) {
+            return $arashName;
+        })();
+    }
 }
