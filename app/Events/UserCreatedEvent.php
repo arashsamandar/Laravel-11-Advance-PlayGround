@@ -10,12 +10,24 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ArashEventTwo
+class UserCreatedEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    public string $message;
-    public function __construct(string $message)
+
+    public function __construct()
     {
-        $this->message = $message;
+        //
+    }
+
+
+    /**
+     * Get the channels the event should broadcast on.
+     * @return array<int, \Illuminate\Broadcasting\Channel>
+     */
+    public function broadcastOn(): array
+    {
+        return [
+            new PrivateChannel('channel-name'),
+        ];
     }
 }
