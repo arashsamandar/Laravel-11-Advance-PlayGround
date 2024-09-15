@@ -7,16 +7,21 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
 
-class UserCreatedListener
+class UserCreatedListenerTwo
 {
-
+    /**
+     * Create the event listener.
+     */
     public function __construct()
     {
         //
     }
 
+    /**
+     * Handle the event.
+     */
     public function handle(UserCreatedEvent $event): void
     {
-        Log::info('Listener One ( 1 ) Launched ' . $event->message);
+        Log::info('Listener Two ( 2 ) Launched ' . $event->message);
     }
 }

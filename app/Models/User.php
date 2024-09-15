@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\UserCreatedEvent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -25,7 +26,7 @@ class User extends Authenticatable
     protected static function boot(): void
     {
         parent::boot();
-        // do your stuff here
+        static::creating(fn(self $model) => event(new UserCreatedEvent('User was Created Event')));
     }
 
     public function sentMessages(): MorphMany
