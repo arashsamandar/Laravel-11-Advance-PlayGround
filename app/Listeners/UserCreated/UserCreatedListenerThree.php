@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Listeners\UserCreated;
 
 use App\Events\UserCreatedEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
 
-class UserCreatedListenerTwo
+class UserCreatedListenerThree
 {
     /**
      * Create the event listener.
@@ -22,6 +22,6 @@ class UserCreatedListenerTwo
      */
     public function handle(UserCreatedEvent $event): void
     {
-        Log::info('Listener Two ( 2 ) Launched ' . $event->message);
+        Log::info('Listener Three ( 3 ) Launched ' . $event->message);
     }
 }
